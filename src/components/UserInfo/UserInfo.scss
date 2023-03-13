@@ -1,0 +1,25 @@
+@keyframes example {
+  0%   {display: none;}
+  100% {display: block;}
+}
+
+
+._user-avatar-image {
+  border-radius: 250px !important;
+  max-width: 300px;
+  border: 2px dashed #16a4ff;
+  transition: example;
+  transition-property: display;
+  transition-duration: 1s;
+}
+._card-user-info {
+  .ant-card-cover a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .ant-image {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

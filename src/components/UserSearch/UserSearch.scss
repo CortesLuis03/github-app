@@ -1,0 +1,31 @@
+._user-selector { 
+  min-width: 500px;
+  box-shadow: 0 0 10px #00000021;
+  padding: 10px 0px;
+  transition-property: min-width;
+  transition-duration: .5s;
+  .ant-select-selector {
+    border-radius: 3px;
+    border: none !important;
+  }
+}
+
+._container-user-selector {
+  display: flex;
+  justify-content: center;
+  min-height: 150px;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+@media only screen and (max-width: 550px) {
+  ._user-selector {
+    min-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  ._user-selector {
+    min-width: 300px;
+  }
+}
