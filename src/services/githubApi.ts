@@ -50,7 +50,7 @@ export const fetchDetails = (username: string, type: string, data: Function) => 
     }
 
     timeout = setTimeout(() => {
-        fetch(`https://api.github.com/users/${username}/${type}`)
+        fetch(`https://api.github.com/users/${username}/${type}?sort=updated`)
             .then((response: any) => response.json())
             .then((response: UserData) => {
                 data(response);
