@@ -8,12 +8,13 @@ import {
   Typography,
   Button,
 } from "antd";
+import { LinkOutlined } from "@ant-design/icons";
 import { useMemo, useState } from "react";
 import { fetchDetails, fetchUser } from "../../services/githubApi";
 import { UserData } from "../../types";
 import { InfoDetailProps } from "./types";
 import "./UserInfoDetail.scss";
-const { Link } = Typography;
+const { Link, Paragraph } = Typography;
 
 const tagColors = [
   "magenta",
@@ -58,10 +59,25 @@ export function UserInfoDetail({
             renderItem={(item) => (
               <List.Item>
                 <Card className="_card-item-repo">
-                  <Space align="start">
+                  <Space align="start" direction="vertical">
                     <Link href={item.html_url} target="_blank">
                       {item?.name}
                     </Link>
+                    {item?.homepage != "" && item?.homepage ? (
+                      <Paragraph
+                        copyable={{
+                          onCopy: () => {
+                            window.open(item.homepage, "_blank");
+                          },
+                          tooltips: false,
+                          icon: <LinkOutlined />,
+                        }}
+                      >
+                        Website
+                      </Paragraph>
+                    ) : (
+                      <></>
+                    )}
                   </Space>
                   <br />
                   {item?.language != null ? (
